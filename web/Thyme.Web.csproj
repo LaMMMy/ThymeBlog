@@ -170,7 +170,6 @@
     <Content Include="Styles\Post.css" />
     <Content Include="Global.asax" />
     <Content Include="Styles\iPad.css" />
-    <Content Include="Styles\Site.css" />
     <Content Include="robots.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
