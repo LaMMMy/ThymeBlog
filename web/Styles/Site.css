@@ -28,7 +28,9 @@ h1, h2, h3 {
 footer {
 padding-bottom:20px;}
 #title {
-    margin: 0 0 20px;
+    margin-bottom: 20px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
     padding: 10px 0 10px 10px;
     background-color:#b0e0e6;
     border: solid #ddd;
