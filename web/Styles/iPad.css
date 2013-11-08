@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+.centre {
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;    
+}
+
 body {
     width: 1024px;
     font-family:"Open Sans", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
@@ -24,7 +30,7 @@ padding-bottom:20px;}
 #title {
     margin: 0 0 20px;
     padding: 10px 0 10px 10px;
-    background: #eee;
+    background-color:#b0e0e6;
     border: solid #ddd;
     border-width: 0 0 1px;
     position: relative;
