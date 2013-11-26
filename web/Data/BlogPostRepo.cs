@@ -130,6 +130,7 @@ namespace Thyme.Web.Models
         {
             return System.IO.Directory.Exists(LocalRepoPath);
         }
+
         private void CloneRepo()
         {
             System.IO.Directory.Delete(LocalRepoPath, true);

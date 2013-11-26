@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Thyme.Web.Models;
 using Thyme.Web.ViewModels;
 
@@ -24,6 +20,7 @@ namespace Thyme.Web.Controllers
             repo.RefreshRepo();
             return RedirectToAction("Index");
         }
+
         public ActionResult ViewPost(string slug)
         {
             BlogPost bp;
