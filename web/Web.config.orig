@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <appSettings>
+<<<<<<< HEAD
+    <add key="BlogTitle" value="Bensonius Blog"/>
+=======
+    <add key="BlogTitle" value="Bensonius"/>
+>>>>>>> eb94d1796909939f0528a4ee163dd017b20c8744
+    <add key="RepoTTLInCacheHours" value="1"/>
+    <add key="GitRepo" value="https://github.com/LaMMMy/blogfiles.git"/>
+    <add key="BlogFilesDir" value="BlogFiles"/>
+    <add key="TwitterAcct" value="bensonlott" />
+    <add key="FrontPageShowNumberPosts" value="20"/> <!-- -1 for all -->
+    <add key="DateTimeFormat" value="dd-MMM-yyyy"/>
+  </appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+    <customErrors mode="Off"/>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <handlers>
+      <remove name="ExtensionlessUrlHandler-ISAPI-4.0_32bit" />
+      <remove name="ExtensionlessUrlHandler-ISAPI-4.0_64bit" />
+      <remove name="ExtensionlessUrlHandler-Integrated-4.0" />
+      <add name="ExtensionlessUrlHandler-ISAPI-4.0_32bit" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_isapi.dll" preCondition="classicMode,runtimeVersionv4.0,bitness32" responseBufferLimit="0" />
+      <add name="ExtensionlessUrlHandler-ISAPI-4.0_64bit" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" modules="IsapiModule" scriptProcessor="%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_isapi.dll" preCondition="classicMode,runtimeVersionv4.0,bitness64" responseBufferLimit="0" />
+      <add name="ExtensionlessUrlHandler-Integrated-4.0" path="*." verb="GET,HEAD,POST,DEBUG,PUT,DELETE,PATCH,OPTIONS" type="System.Web.Handlers.TransferRequestHandler" preCondition="integratedMode,runtimeVersionv4.0" />
+      <remove name="OPTIONSVerbHandler" />
+      <remove name="TRACEVerbHandler" />
+    </handlers>
+    <rewrite>
+      <rules>
+        <clear></clear>
+        <rule name="Blog images to their real location from the Git repo" stopProcessing="true">
+          <match url="^blog/img/(.*)" />          <!-- could be blog/img/foo.jpg  -->
+          <action type="Redirect" url="BlogFiles/img/{R:1}" redirectType="Temporary"  /><!-- "BlogFiles" being the value of appSettings key "BlogFilesDir" above. --> 
+        </rule>
+      </rules>
+    </rewrite>
+  </system.webServer>
+</configuration>
